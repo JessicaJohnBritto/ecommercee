@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+  </head>
+  <style>
+      body{
+background-image: url('https://i.pinimg.com/originals/35/c9/93/35c993258e4c0cdc4a0b55c3211180ab.jpg'); 
+background-size: cover;
+}
+
+      .cont{
+          width: 40%;
+          padding: 50px;
+          margin: 50px auto;
+          background-color: rgba(220, 217, 245, 0.6);
+          border-radius: 15px;
+          justify-content: center;
+          text-align: center; 
+      }
+      .title{
+          padding: 5px 2px 5px 2px;
+          margin: 5px 2px 5px 2px;
+          font-size: 200%;
+          font-weight: 800;
+          font-family: cursive;
+          justify-content: center;
+          text-align: center;
+          
+      }
+      .head{
+          padding: 5px 2px 5px 2px;
+          margin: 50px auto;
+          justify-content: center;
+          text-align: center;
+          color: rgb(98, 14, 177);
+          font-size: 300%;
+          font-weight: 800;
+          font-family: cursive;
+          border-radius: 15px;
+      }
+ input[type=text], input[type=tel], input[type=email], #countryCode {
+     width:50%;
+     padding: 10px 5px 10px 5px;
+     margin:10px 5px 10px 5px;
+     border: none;
+     border-bottom: 3px solid rgb(121, 45, 207);
+     text-transform: uppercase;
+     justify-content: center;
+          text-align: center;
+          font-size: 100%;
+ }
+
+ input[type=text]:hover, #countryCode:hover, input[type=tel]:hover, input[type=email]:hover {
+  background-color: #e9e9f5;
+}
+
+textarea
+{
+     width:50%;
+     padding: 10px 5px 10px 5px;
+     margin:10px 5px 10px 5px;
+     border: none;
+     border-bottom: 3px solid rgb(121, 45, 207);
+     resize:vertical;
+     justify-content: center;
+     text-align: center;
+     text-justify: inter-word;
+}
+
+textarea:hover{
+    background-color: #e9e9f5;
+}
+
+input[type=submit] {
+  background-color: #6359e7;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-content: center;
+}
+input[type=submit]:hover{
+    background-color: #0f0fc2;
+}
+
+@media screen and (max-width: 500px) {
+    .body{
+        background-image: url('https://i.pinimg.com/originals/35/c9/93/35c993258e4c0cdc4a0b55c3211180ab.jpg'); 
+        background-size: cover;  
+        background-repeat: no-repeat;
+    }
+ 
+  .head{
+      font-size: 200%;
+      word-wrap: break-word;
+       display: flex;
+  flex-wrap: wrap;
+  }
+  .title{
+    font-size: 150%;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+     display: flex;
+  flex-wrap: wrap;
+  }
+  input[type=text], input[type=tel], input[type=email], #countryCode{
+    font-size: 80%;
+    width:60%;
+    height:60%;
+     padding: 3px;
+     margin:5px 3px 5px 3px;
+     border: none;
+     border-bottom: 3px solid rgb(121, 45, 207);
+     word-wrap: break-word;
+     justify-content: center;
+          text-justify: inter-word;
+          text-align: center;
+  }
+ 
+  }
+  </style>
+
+<script>
+  function validateForm() {
+    var x = document.forms["fForm"]["fname"].value;
+    var y = document.forms["fForm"]["lname"].value;
+    var z = document.forms["fForm"]["email"].value;
+
+    var lisst=new Array(x,y,z);
+
+    for(var i=0; i<lisst.length; i++) {
+        if (lisst[i].value == "") {
+            document.getElementById("red").style.backgroundColor = "rgb(235, 133, 133)";
+              }
+              else
+              {
+                document.getElementById("red").style.backgroundColor = "rgba(220, 217, 245, 0.6)";
+              }
+    }
+
+   
+  
+  }
+  </script>
+
+  <body>
+      
+  <div class="cont">
+    <div class="head">
+        Register with Us!
+    </div>
+      <form name="fForm" action="index.html" onclick="validateForm()">
+        <div class="rede" id="red">
+          <div class="title">
+            <label>First Name</label>
+          </div>
+          <div class="inp"> 
+              <input type="text" name="fname" required placeholder="First Name">
+        </div>
+      </div>
+      <div class="rede" id="red">
+        <div class="title">
+            <label>Last Name</label>
+          </div>
+          <div class="inp"> 
+              <input type="text" name="lname" required placeholder="Last Name">
+        </div>
+        </div>
+        <div class="title">
+            <label>Email ID</label>
+          </div>
+          <div class="inp"> 
+              <input type="email" name="email" required placeholder="Email Address">
+        </div>
+        <div class="title">
+          <label>Country Code</label>
+        </div>
+         <select id="countryCode">
+         <option value="select">--Select--</option>
+         <option value="Australia">+61</option>
+        <option value="UAE">+971</option>
+        <option value="USA">+1</option>
+        <option value="India">+91</option>
+        <option value="KSA">+996</option>
+      </select>
+        <div class="title">
+          <label>Phone Number</label>
+        </div>
+        <div class="inp"> 
+            <input type="tel" required placeholder="Phone Number">
+      </div>
+        <div class="title">
+            <label>Message Us</label>
+          </div>
+          <div> 
+              <textarea placeholder="Type your Message here...."></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Submit" onclick="validateForm()">
+        </div>
+      </form>
+  </div>
+  </body>
+</html>
